@@ -24,15 +24,25 @@ module SorbetRails
       signature = T::Private::Methods.signature_for_method(method_def)
       method_def = signature.nil? ? method_def : signature.method
 
-      parameters_with_type = signature.nil? ?
-        method_def.parameters.map { |p|
+      parameters_with_type = if signature.nil?
+        method_def.parameters.map do |p|
+          name = if p.size == 1
+            :_
+          else
+            p[1]
+          end
+
+          name = :_ if name == :*
+
           ParsedParamDef.new(
-            name: p.size == 1 ? :_ : p[1],  # give param without name default name _
+            name: name,  # give param without name default name _
             kind: p[0], # append untyped as type of each param
             type_str: 'T.untyped',
           )
-        } :
+        end
+      else
         get_ordered_parameters_with_type(signature)
+      end
 
       # add prefix & suffix
       parameters_with_type.each do |param_def|
