@@ -26,8 +26,11 @@ module SorbetRails
 
       parameters_with_type = signature.nil? ?
         method_def.parameters.map { |p|
+          name = if p.size == 1 ? :_ : p[1]
+          name = :_ if name == :*
+
           ParsedParamDef.new(
-            name: p.size == 1 ? :_ : p[1],  # give param without name default name _
+            name: name,  # give param without name default name _
             kind: p[0], # append untyped as type of each param
             type_str: 'T.untyped',
           )
