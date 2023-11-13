@@ -1,0 +1,1303 @@
+
+spec/typed_params_spec.rb,273
+module TypedParamsSpecTypedParamsSpec6,0
+  class MyActionParams < T::StructMyActionParams7,0
+  class MyActionParams < T::StructTypedParamsSpec::MyActionParams7,0
+    class Info < T::StructInfo8,0
+    class Info < T::StructTypedParamsSpec::MyActionParams::Info8,0
+
+spec/rake_helper.rb,46
+module TaskExampleGroupTaskExampleGroup17,0
+
+spec/rake_rails_rbi_mailers_spec.rb,134
+  class CustomMailerRbiGenerator < SorbetRails::MailerRbiFormatterCustomMailerRbiGenerator6,0
+    def populate_rbipopulate_rbi7,0
+
+spec/rake_rails_rbi_jobs_spec.rb,125
+  class CustomJobRbiGenerator < SorbetRails::JobRbiFormatterCustomJobRbiGenerator6,0
+    def populate_rbipopulate_rbi7,0
+
+spec/sorbet_utils_spec.rb,1101
+module SorbetUtilsExampleModuleSorbetUtilsExampleModule5,0
+class SorbetUtilsExampleClassSorbetUtilsExampleClass8,0
+  def no_param_method; endno_param_method12,0
+  def method_req_args(p1, p2); endmethod_req_args15,0
+  def method_req_kwarg(p1:, p2:); endmethod_req_kwarg18,0
+  def method_mixed(p1, p2:); endmethod_mixed21,0
+  def method_with_rest(p1, *p2); endmethod_with_rest24,0
+  def method_with_keyrest(p1, p2:, **p3); endmethod_with_keyrest27,0
+  def method_with_block(*p1, &p2); endmethod_with_block30,0
+  def method_with_block_return(&p1); endmethod_with_block_return33,0
+  def method_without_sig(p1, p2, *p3, p4:, **p5, &p6); endmethod_without_sig35,0
+  def method_with_default_with_sig(p1, p2='abc', p3:, p4: 123); endmethod_with_default_with_sig38,0
+  def method_with_default(p1, p2='abc', p3:, p4: 123); endmethod_with_default40,0
+  def method_with_missing_args_name(p1, *); endmethod_with_missing_args_name42,0
+  def method_with_missing_kwargs_name(p1, **); endmethod_with_missing_kwargs_name44,0
+  Parameter = ::Parlour::RbiGenerator::ParameterParameter48,0
+
+spec/pluck_to_tstruct_spec.rb,329
+  class WizardName < T::StructWizardName44,0
+  class WizardT < T::StructWizardT50,0
+  class WizardWithWandT < T::StructWizardWithWandT57,0
+  class WizardWithDefaultParentEmailT < T::StructWizardWithDefaultParentEmailT65,0
+  class WizardWithDefaultNilableParentEmailT < T::StructWizardWithDefaultNilableParentEmailT73,0
+
+spec/support/v6.1/app/mailers/hogwarts_acceptance_mailer.rb,201
+class HogwartsAcceptanceMailer < ApplicationMailerHogwartsAcceptanceMailer2,0
+  def notify(student)notify6,0
+  def notify_teacher(notify_teacher18,0
+  def notify_retry(student)notify_retry26,0
+
+spec/support/v6.1/app/mailers/daily_prophet_mailer.rb,141
+class DailyProphetMailer < ApplicationMailerDailyProphetMailer2,0
+  def notify_subscribers(wizards:, hotnews_only:)notify_subscribers6,0
+
+spec/support/v6.1/app/mailers/application_mailer.rb,67
+class ApplicationMailer < ActionMailer::BaseApplicationMailer2,0
+
+spec/support/v6.1/app/models/wand.rb,338
+class Wand < ApplicationRecordWand2,0
+  belongs_to :wizard, required: truewizard14,0
+  belongs_to :wizard, required: truewizard=14,0
+  belongs_to :wizard, required: truebuild_wizard14,0
+  belongs_to :wizard, required: truecreate_wizard14,0
+  belongs_to :wizard, required: truecreate_wizard!14,0
+  def wood_typewood_type16,0
+
+spec/support/v6.1/app/models/potion.rb,311
+class Potion < ApplicationRecordPotion3,0
+  belongs_to :wizard, required: falsewizard5,0
+  belongs_to :wizard, required: falsewizard=5,0
+  belongs_to :wizard, required: falsebuild_wizard5,0
+  belongs_to :wizard, required: falsecreate_wizard5,0
+  belongs_to :wizard, required: falsecreate_wizard!5,0
+
+spec/support/v6.1/app/models/wizard.rb,1000
+class Wizard < ApplicationRecordWizard2,0
+  class Professor; endProfessor15,0
+  class Professor; endWizard::Professor15,0
+  has_one :wandwand55,0
+  has_one :wandwand=55,0
+  has_one :wandbuild_wand55,0
+  has_one :wandcreate_wand55,0
+  has_one :wandcreate_wand!55,0
+  has_many :spell_booksspell_books56,0
+  has_many :spell_booksspell_books=56,0
+  has_many :spell_booksspell_book_ids56,0
+  has_many :spell_booksspell_book_ids=56,0
+  has_and_belongs_to_many :subjectssubjects58,0
+  has_and_belongs_to_many :subjectssubjects=58,0
+  has_and_belongs_to_many :subjectssubject_ids58,0
+  has_and_belongs_to_many :subjectssubject_ids=58,0
+  belongs_to :school, optional: trueschool61,0
+  belongs_to :school, optional: trueschool=61,0
+  belongs_to :school, optional: truebuild_school61,0
+  belongs_to :school, optional: truecreate_school61,0
+  belongs_to :school, optional: truecreate_school!61,0
+  scope :recent, -> { where('created_at > ?', 1.month.ago) }recent63,0
+
+spec/support/v6.1/app/models/squib.rb,63
+class Squib < WizardSquib2,0
+  def is_magicalis_magical3,0
+
+spec/support/v6.1/app/models/robe.rb,307
+class Robe < ApplicationRecordRobe2,0
+  belongs_to :wizard, required: falsewizard3,0
+  belongs_to :wizard, required: falsewizard=3,0
+  belongs_to :wizard, required: falsebuild_wizard3,0
+  belongs_to :wizard, required: falsecreate_wizard3,0
+  belongs_to :wizard, required: falsecreate_wizard!3,0
+
+spec/support/v6.1/app/models/headmaster.rb,581
+class Headmaster < ApplicationRecordHeadmaster2,0
+  belongs_to :school, required: falseschool3,0
+  belongs_to :school, required: falseschool=3,0
+  belongs_to :school, required: falsebuild_school3,0
+  belongs_to :school, required: falsecreate_school3,0
+  belongs_to :school, required: falsecreate_school!3,0
+  belongs_to :wizard, optional: truewizard4,0
+  belongs_to :wizard, optional: truewizard=4,0
+  belongs_to :wizard, optional: truebuild_wizard4,0
+  belongs_to :wizard, optional: truecreate_wizard4,0
+  belongs_to :wizard, optional: truecreate_wizard!4,0
+
+spec/support/v6.1/app/models/subject.rb,242
+class Subject < ApplicationRecordSubject2,0
+  has_and_belongs_to_many :wizardswizards4,0
+  has_and_belongs_to_many :wizardswizards=4,0
+  has_and_belongs_to_many :wizardswizard_ids4,0
+  has_and_belongs_to_many :wizardswizard_ids=4,0
+
+spec/support/v6.1/app/models/spell_book.rb,573
+class SpellBook < ApplicationRecordSpellBook2,0
+  belongs_to :wizard, optional: truewizard6,0
+  belongs_to :wizard, optional: truewizard=6,0
+  belongs_to :wizard, optional: truebuild_wizard6,0
+  belongs_to :wizard, optional: truecreate_wizard6,0
+  belongs_to :wizard, optional: truecreate_wizard!6,0
+  has_and_belongs_to_many :spellsspells9,0
+  has_and_belongs_to_many :spellsspells=9,0
+  has_and_belongs_to_many :spellsspell_ids9,0
+  has_and_belongs_to_many :spellsspell_ids=9,0
+  scope :recent, -> { where('created_at > ?', 1.month.ago) }recent17,0
+
+spec/support/v6.1/app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord2,0
+
+spec/support/v6.1/app/models/concerns/mythical.rb,61
+module MythicalMythical3,0
+    def mythicalsmythicals7,0
+
+spec/support/v6.1/app/models/spell.rb,270
+class Spell < ApplicationRecordSpell2,0
+  has_and_belongs_to_many :spell_booksspell_books4,0
+  has_and_belongs_to_many :spell_booksspell_books=4,0
+  has_and_belongs_to_many :spell_booksspell_book_ids4,0
+  has_and_belongs_to_many :spell_booksspell_book_ids=4,0
+
+spec/support/v6.1/app/models/school.rb,251
+class School < ApplicationRecordSchool2,0
+  has_one :headmasterheadmaster3,0
+  has_one :headmasterheadmaster=3,0
+  has_one :headmasterbuild_headmaster3,0
+  has_one :headmastercreate_headmaster3,0
+  has_one :headmastercreate_headmaster!3,0
+
+spec/support/v6.1/app/jobs/award_house_point_hourglasses.rb,125
+class AwardHousePointHourglasses < ApplicationJobAwardHousePointHourglasses5,0
+  def perform(student:, point:)perform9,0
+
+spec/support/v6.1/app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob2,0
+
+spec/support/v6.1/app/controllers/application_controller.rb,79
+class ApplicationController < ActionController::BaseApplicationController2,0
+
+spec/support/v6.1/app/helpers/bar_helper.rb,31
+module BarHelperBarHelper2,0
+
+spec/support/v6.1/app/helpers/foo_helper.rb,31
+module FooHelperFooHelper2,0
+
+spec/support/v6.1/app/helpers/baz_helper.rb,31
+module BazHelperBazHelper2,0
+
+spec/support/v6.1/app/helpers/application_helper.rb,47
+module ApplicationHelperApplicationHelper2,0
+
+spec/support/v6.1/config/application.rb,141
+module V60V6023,0
+  class Application < Rails::ApplicationApplication24,0
+  class Application < Rails::ApplicationV60::Application24,0
+
+spec/support/v6.1/sorbet_test_cases.rb,226
+class MyActionParams < T::StructMyActionParams386,0
+  class Info < T::StructInfo387,0
+  class Info < T::StructMyActionParams::Info387,0
+class WizardStruct < T::StructWizardStruct415,0
+class TestHelperTestHelper431,0
+
+spec/support/v6.1/lib/mythical_rbi_plugin.rb,114
+class MythicalRbiPlugin < SorbetRails::ModelPlugins::BaseMythicalRbiPlugin2,0
+  def generate(root)generate3,0
+
+spec/support/v6.1/db/migrate/20190620000006_add_more_enums_to_wizard.rb,107
+class AddMoreEnumsToWizard < ActiveRecord::Migration[6.0]AddMoreEnumsToWizard2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000011_add_subjects_wizards.rb,103
+class AddSubjectsWizards < ActiveRecord::Migration[6.0]AddSubjectsWizards2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000014_create_headmasters.rb,101
+class CreateHeadmasters < ActiveRecord::Migration[6.0]CreateHeadmasters2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000015_add_serialized_to_wizards.rb,111
+class AddSerializedToWizards < ActiveRecord::Migration[6.0]AddSerializedToWizards2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000005_add_broom_to_wizard.rb,99
+class AddBroomToWizard < ActiveRecord::Migration[6.0]AddBroomToWizard2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000010_add_subject.rb,87
+class AddSubject < ActiveRecord::Migration[6.0]AddSubject2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000008_add_robe_to_wizard.rb,97
+class AddRobeToWizard < ActiveRecord::Migration[6.0]AddRobeToWizard2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000012_add_spell.rb,83
+class AddSpell < ActiveRecord::Migration[6.0]AddSpell2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000007_add_type_to_wizard.rb,97
+class AddTypeToWizard < ActiveRecord::Migration[6.0]AddTypeToWizard2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000003_create_spell_books.rb,99
+class CreateSpellBooks < ActiveRecord::Migration[6.0]CreateSpellBooks2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000009_add_school.rb,85
+class AddSchool < ActiveRecord::Migration[6.0]AddSchool2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000004_add_more_column_types_to_wands.rb,117
+class AddMoreColumnTypesToWands < ActiveRecord::Migration[6.0]AddMoreColumnTypesToWands2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000002_create_wands.rb,89
+class CreateWands < ActiveRecord::Migration[6.0]CreateWands2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000013_add_spells_spell_books.rb,105
+class AddSpellsSpellBooks < ActiveRecord::Migration[6.0]AddSpellsSpellBooks2,0
+  def changechange3,0
+
+spec/support/v6.1/db/migrate/20190620000001_create_wizards.rb,93
+class CreateWizards < ActiveRecord::Migration[6.0]CreateWizards2,0
+  def changechange3,0
+
+spec/support/v6.0/app/mailers/hogwarts_acceptance_mailer.rb,201
+class HogwartsAcceptanceMailer < ApplicationMailerHogwartsAcceptanceMailer2,0
+  def notify(student)notify6,0
+  def notify_teacher(notify_teacher18,0
+  def notify_retry(student)notify_retry26,0
+
+spec/support/v6.0/app/mailers/daily_prophet_mailer.rb,141
+class DailyProphetMailer < ApplicationMailerDailyProphetMailer2,0
+  def notify_subscribers(wizards:, hotnews_only:)notify_subscribers6,0
+
+spec/support/v6.0/app/mailers/application_mailer.rb,67
+class ApplicationMailer < ActionMailer::BaseApplicationMailer2,0
+
+spec/support/v6.0/app/models/wand.rb,338
+class Wand < ApplicationRecordWand2,0
+  belongs_to :wizard, required: truewizard14,0
+  belongs_to :wizard, required: truewizard=14,0
+  belongs_to :wizard, required: truebuild_wizard14,0
+  belongs_to :wizard, required: truecreate_wizard14,0
+  belongs_to :wizard, required: truecreate_wizard!14,0
+  def wood_typewood_type16,0
+
+spec/support/v6.0/app/models/potion.rb,311
+class Potion < ApplicationRecordPotion3,0
+  belongs_to :wizard, required: falsewizard5,0
+  belongs_to :wizard, required: falsewizard=5,0
+  belongs_to :wizard, required: falsebuild_wizard5,0
+  belongs_to :wizard, required: falsecreate_wizard5,0
+  belongs_to :wizard, required: falsecreate_wizard!5,0
+
+spec/support/v6.0/app/models/wizard.rb,1000
+class Wizard < ApplicationRecordWizard2,0
+  class Professor; endProfessor15,0
+  class Professor; endWizard::Professor15,0
+  has_one :wandwand55,0
+  has_one :wandwand=55,0
+  has_one :wandbuild_wand55,0
+  has_one :wandcreate_wand55,0
+  has_one :wandcreate_wand!55,0
+  has_many :spell_booksspell_books56,0
+  has_many :spell_booksspell_books=56,0
+  has_many :spell_booksspell_book_ids56,0
+  has_many :spell_booksspell_book_ids=56,0
+  has_and_belongs_to_many :subjectssubjects58,0
+  has_and_belongs_to_many :subjectssubjects=58,0
+  has_and_belongs_to_many :subjectssubject_ids58,0
+  has_and_belongs_to_many :subjectssubject_ids=58,0
+  belongs_to :school, optional: trueschool61,0
+  belongs_to :school, optional: trueschool=61,0
+  belongs_to :school, optional: truebuild_school61,0
+  belongs_to :school, optional: truecreate_school61,0
+  belongs_to :school, optional: truecreate_school!61,0
+  scope :recent, -> { where('created_at > ?', 1.month.ago) }recent63,0
+
+spec/support/v6.0/app/models/squib.rb,63
+class Squib < WizardSquib2,0
+  def is_magicalis_magical3,0
+
+spec/support/v6.0/app/models/robe.rb,307
+class Robe < ApplicationRecordRobe2,0
+  belongs_to :wizard, required: falsewizard3,0
+  belongs_to :wizard, required: falsewizard=3,0
+  belongs_to :wizard, required: falsebuild_wizard3,0
+  belongs_to :wizard, required: falsecreate_wizard3,0
+  belongs_to :wizard, required: falsecreate_wizard!3,0
+
+spec/support/v6.0/app/models/headmaster.rb,581
+class Headmaster < ApplicationRecordHeadmaster2,0
+  belongs_to :school, required: falseschool3,0
+  belongs_to :school, required: falseschool=3,0
+  belongs_to :school, required: falsebuild_school3,0
+  belongs_to :school, required: falsecreate_school3,0
+  belongs_to :school, required: falsecreate_school!3,0
+  belongs_to :wizard, optional: truewizard4,0
+  belongs_to :wizard, optional: truewizard=4,0
+  belongs_to :wizard, optional: truebuild_wizard4,0
+  belongs_to :wizard, optional: truecreate_wizard4,0
+  belongs_to :wizard, optional: truecreate_wizard!4,0
+
+spec/support/v6.0/app/models/subject.rb,242
+class Subject < ApplicationRecordSubject2,0
+  has_and_belongs_to_many :wizardswizards4,0
+  has_and_belongs_to_many :wizardswizards=4,0
+  has_and_belongs_to_many :wizardswizard_ids4,0
+  has_and_belongs_to_many :wizardswizard_ids=4,0
+
+spec/support/v6.0/app/models/spell_book.rb,573
+class SpellBook < ApplicationRecordSpellBook2,0
+  belongs_to :wizard, optional: truewizard6,0
+  belongs_to :wizard, optional: truewizard=6,0
+  belongs_to :wizard, optional: truebuild_wizard6,0
+  belongs_to :wizard, optional: truecreate_wizard6,0
+  belongs_to :wizard, optional: truecreate_wizard!6,0
+  has_and_belongs_to_many :spellsspells9,0
+  has_and_belongs_to_many :spellsspells=9,0
+  has_and_belongs_to_many :spellsspell_ids9,0
+  has_and_belongs_to_many :spellsspell_ids=9,0
+  scope :recent, -> { where('created_at > ?', 1.month.ago) }recent17,0
+
+spec/support/v6.0/app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord2,0
+
+spec/support/v6.0/app/models/concerns/mythical.rb,61
+module MythicalMythical3,0
+    def mythicalsmythicals7,0
+
+spec/support/v6.0/app/models/spell.rb,270
+class Spell < ApplicationRecordSpell2,0
+  has_and_belongs_to_many :spell_booksspell_books4,0
+  has_and_belongs_to_many :spell_booksspell_books=4,0
+  has_and_belongs_to_many :spell_booksspell_book_ids4,0
+  has_and_belongs_to_many :spell_booksspell_book_ids=4,0
+
+spec/support/v6.0/app/models/school.rb,251
+class School < ApplicationRecordSchool2,0
+  has_one :headmasterheadmaster3,0
+  has_one :headmasterheadmaster=3,0
+  has_one :headmasterbuild_headmaster3,0
+  has_one :headmastercreate_headmaster3,0
+  has_one :headmastercreate_headmaster!3,0
+
+spec/support/v6.0/app/jobs/award_house_point_hourglasses.rb,125
+class AwardHousePointHourglasses < ApplicationJobAwardHousePointHourglasses5,0
+  def perform(student:, point:)perform9,0
+
+spec/support/v6.0/app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob2,0
+
+spec/support/v6.0/app/controllers/application_controller.rb,79
+class ApplicationController < ActionController::BaseApplicationController2,0
+
+spec/support/v6.0/app/helpers/bar_helper.rb,31
+module BarHelperBarHelper2,0
+
+spec/support/v6.0/app/helpers/foo_helper.rb,31
+module FooHelperFooHelper2,0
+
+spec/support/v6.0/app/helpers/baz_helper.rb,31
+module BazHelperBazHelper2,0
+
+spec/support/v6.0/app/helpers/application_helper.rb,47
+module ApplicationHelperApplicationHelper2,0
+
+spec/support/v6.0/config/application.rb,141
+module V60V6023,0
+  class Application < Rails::ApplicationApplication24,0
+  class Application < Rails::ApplicationV60::Application24,0
+
+spec/support/v6.0/sorbet_test_cases.rb,226
+class MyActionParams < T::StructMyActionParams383,0
+  class Info < T::StructInfo384,0
+  class Info < T::StructMyActionParams::Info384,0
+class WizardStruct < T::StructWizardStruct412,0
+class TestHelperTestHelper428,0
+
+spec/support/v6.0/lib/mythical_rbi_plugin.rb,114
+class MythicalRbiPlugin < SorbetRails::ModelPlugins::BaseMythicalRbiPlugin2,0
+  def generate(root)generate3,0
+
+spec/support/v6.0/db/migrate/20190620000006_add_more_enums_to_wizard.rb,107
+class AddMoreEnumsToWizard < ActiveRecord::Migration[6.0]AddMoreEnumsToWizard2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000011_add_subjects_wizards.rb,103
+class AddSubjectsWizards < ActiveRecord::Migration[6.0]AddSubjectsWizards2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000014_create_headmasters.rb,101
+class CreateHeadmasters < ActiveRecord::Migration[6.0]CreateHeadmasters2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000015_add_serialized_to_wizards.rb,111
+class AddSerializedToWizards < ActiveRecord::Migration[6.0]AddSerializedToWizards2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000005_add_broom_to_wizard.rb,99
+class AddBroomToWizard < ActiveRecord::Migration[6.0]AddBroomToWizard2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000010_add_subject.rb,87
+class AddSubject < ActiveRecord::Migration[6.0]AddSubject2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000008_add_robe_to_wizard.rb,97
+class AddRobeToWizard < ActiveRecord::Migration[6.0]AddRobeToWizard2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000012_add_spell.rb,83
+class AddSpell < ActiveRecord::Migration[6.0]AddSpell2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000007_add_type_to_wizard.rb,97
+class AddTypeToWizard < ActiveRecord::Migration[6.0]AddTypeToWizard2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000003_create_spell_books.rb,99
+class CreateSpellBooks < ActiveRecord::Migration[6.0]CreateSpellBooks2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000009_add_school.rb,85
+class AddSchool < ActiveRecord::Migration[6.0]AddSchool2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000004_add_more_column_types_to_wands.rb,117
+class AddMoreColumnTypesToWands < ActiveRecord::Migration[6.0]AddMoreColumnTypesToWands2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000002_create_wands.rb,89
+class CreateWands < ActiveRecord::Migration[6.0]CreateWands2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000013_add_spells_spell_books.rb,105
+class AddSpellsSpellBooks < ActiveRecord::Migration[6.0]AddSpellsSpellBooks2,0
+  def changechange3,0
+
+spec/support/v6.0/db/migrate/20190620000001_create_wizards.rb,93
+class CreateWizards < ActiveRecord::Migration[6.0]CreateWizards2,0
+  def changechange3,0
+
+spec/support/v5.2/app/mailers/hogwarts_acceptance_mailer.rb,201
+class HogwartsAcceptanceMailer < ApplicationMailerHogwartsAcceptanceMailer2,0
+  def notify(student)notify6,0
+  def notify_teacher(notify_teacher18,0
+  def notify_retry(student)notify_retry26,0
+
+spec/support/v5.2/app/mailers/daily_prophet_mailer.rb,141
+class DailyProphetMailer < ApplicationMailerDailyProphetMailer2,0
+  def notify_subscribers(wizards:, hotnews_only:)notify_subscribers6,0
+
+spec/support/v5.2/app/mailers/application_mailer.rb,67
+class ApplicationMailer < ActionMailer::BaseApplicationMailer2,0
+
+spec/support/v5.2/app/models/wand.rb,338
+class Wand < ApplicationRecordWand2,0
+  belongs_to :wizard, required: truewizard14,0
+  belongs_to :wizard, required: truewizard=14,0
+  belongs_to :wizard, required: truebuild_wizard14,0
+  belongs_to :wizard, required: truecreate_wizard14,0
+  belongs_to :wizard, required: truecreate_wizard!14,0
+  def wood_typewood_type16,0
+
+spec/support/v5.2/app/models/potion.rb,311
+class Potion < ApplicationRecordPotion3,0
+  belongs_to :wizard, required: falsewizard5,0
+  belongs_to :wizard, required: falsewizard=5,0
+  belongs_to :wizard, required: falsebuild_wizard5,0
+  belongs_to :wizard, required: falsecreate_wizard5,0
+  belongs_to :wizard, required: falsecreate_wizard!5,0
+
+spec/support/v5.2/app/models/wizard.rb,1000
+class Wizard < ApplicationRecordWizard2,0
+  class Professor; endProfessor15,0
+  class Professor; endWizard::Professor15,0
+  has_one :wandwand55,0
+  has_one :wandwand=55,0
+  has_one :wandbuild_wand55,0
+  has_one :wandcreate_wand55,0
+  has_one :wandcreate_wand!55,0
+  has_many :spell_booksspell_books56,0
+  has_many :spell_booksspell_books=56,0
+  has_many :spell_booksspell_book_ids56,0
+  has_many :spell_booksspell_book_ids=56,0
+  has_and_belongs_to_many :subjectssubjects58,0
+  has_and_belongs_to_many :subjectssubjects=58,0
+  has_and_belongs_to_many :subjectssubject_ids58,0
+  has_and_belongs_to_many :subjectssubject_ids=58,0
+  belongs_to :school, optional: trueschool61,0
+  belongs_to :school, optional: trueschool=61,0
+  belongs_to :school, optional: truebuild_school61,0
+  belongs_to :school, optional: truecreate_school61,0
+  belongs_to :school, optional: truecreate_school!61,0
+  scope :recent, -> { where('created_at > ?', 1.month.ago) }recent63,0
+
+spec/support/v5.2/app/models/squib.rb,63
+class Squib < WizardSquib2,0
+  def is_magicalis_magical3,0
+
+spec/support/v5.2/app/models/robe.rb,307
+class Robe < ApplicationRecordRobe2,0
+  belongs_to :wizard, required: falsewizard3,0
+  belongs_to :wizard, required: falsewizard=3,0
+  belongs_to :wizard, required: falsebuild_wizard3,0
+  belongs_to :wizard, required: falsecreate_wizard3,0
+  belongs_to :wizard, required: falsecreate_wizard!3,0
+
+spec/support/v5.2/app/models/headmaster.rb,581
+class Headmaster < ApplicationRecordHeadmaster2,0
+  belongs_to :school, required: falseschool3,0
+  belongs_to :school, required: falseschool=3,0
+  belongs_to :school, required: falsebuild_school3,0
+  belongs_to :school, required: falsecreate_school3,0
+  belongs_to :school, required: falsecreate_school!3,0
+  belongs_to :wizard, optional: truewizard4,0
+  belongs_to :wizard, optional: truewizard=4,0
+  belongs_to :wizard, optional: truebuild_wizard4,0
+  belongs_to :wizard, optional: truecreate_wizard4,0
+  belongs_to :wizard, optional: truecreate_wizard!4,0
+
+spec/support/v5.2/app/models/subject.rb,242
+class Subject < ApplicationRecordSubject2,0
+  has_and_belongs_to_many :wizardswizards4,0
+  has_and_belongs_to_many :wizardswizards=4,0
+  has_and_belongs_to_many :wizardswizard_ids4,0
+  has_and_belongs_to_many :wizardswizard_ids=4,0
+
+spec/support/v5.2/app/models/spell_book.rb,573
+class SpellBook < ApplicationRecordSpellBook2,0
+  belongs_to :wizard, optional: truewizard6,0
+  belongs_to :wizard, optional: truewizard=6,0
+  belongs_to :wizard, optional: truebuild_wizard6,0
+  belongs_to :wizard, optional: truecreate_wizard6,0
+  belongs_to :wizard, optional: truecreate_wizard!6,0
+  has_and_belongs_to_many :spellsspells9,0
+  has_and_belongs_to_many :spellsspells=9,0
+  has_and_belongs_to_many :spellsspell_ids9,0
+  has_and_belongs_to_many :spellsspell_ids=9,0
+  scope :recent, -> { where('created_at > ?', 1.month.ago) }recent17,0
+
+spec/support/v5.2/app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord2,0
+
+spec/support/v5.2/app/models/concerns/mythical.rb,61
+module MythicalMythical3,0
+    def mythicalsmythicals7,0
+
+spec/support/v5.2/app/models/spell.rb,270
+class Spell < ApplicationRecordSpell2,0
+  has_and_belongs_to_many :spell_booksspell_books4,0
+  has_and_belongs_to_many :spell_booksspell_books=4,0
+  has_and_belongs_to_many :spell_booksspell_book_ids4,0
+  has_and_belongs_to_many :spell_booksspell_book_ids=4,0
+
+spec/support/v5.2/app/models/school.rb,251
+class School < ApplicationRecordSchool2,0
+  has_one :headmasterheadmaster3,0
+  has_one :headmasterheadmaster=3,0
+  has_one :headmasterbuild_headmaster3,0
+  has_one :headmastercreate_headmaster3,0
+  has_one :headmastercreate_headmaster!3,0
+
+spec/support/v5.2/app/jobs/award_house_point_hourglasses.rb,125
+class AwardHousePointHourglasses < ApplicationJobAwardHousePointHourglasses5,0
+  def perform(student:, point:)perform9,0
+
+spec/support/v5.2/app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob2,0
+
+spec/support/v5.2/app/controllers/application_controller.rb,79
+class ApplicationController < ActionController::BaseApplicationController2,0
+
+spec/support/v5.2/app/helpers/bar_helper.rb,31
+module BarHelperBarHelper2,0
+
+spec/support/v5.2/app/helpers/foo_helper.rb,31
+module FooHelperFooHelper2,0
+
+spec/support/v5.2/app/helpers/baz_helper.rb,31
+module BazHelperBazHelper2,0
+
+spec/support/v5.2/app/helpers/application_helper.rb,47
+module ApplicationHelperApplicationHelper2,0
+
+spec/support/v5.2/config/application.rb,141
+module V52V5221,0
+  class Application < Rails::ApplicationApplication22,0
+  class Application < Rails::ApplicationV52::Application22,0
+
+spec/support/v5.2/sorbet_test_cases.rb,226
+class MyActionParams < T::StructMyActionParams383,0
+  class Info < T::StructInfo384,0
+  class Info < T::StructMyActionParams::Info384,0
+class WizardStruct < T::StructWizardStruct412,0
+class TestHelperTestHelper428,0
+
+spec/support/v5.2/lib/mythical_rbi_plugin.rb,114
+class MythicalRbiPlugin < SorbetRails::ModelPlugins::BaseMythicalRbiPlugin2,0
+  def generate(root)generate3,0
+
+spec/support/v5.2/db/migrate/20190620000006_add_more_enums_to_wizard.rb,107
+class AddMoreEnumsToWizard < ActiveRecord::Migration[5.2]AddMoreEnumsToWizard2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000011_add_subjects_wizards.rb,103
+class AddSubjectsWizards < ActiveRecord::Migration[5.2]AddSubjectsWizards2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000014_create_headmasters.rb,101
+class CreateHeadmasters < ActiveRecord::Migration[5.2]CreateHeadmasters2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000015_add_serialized_to_wizards.rb,111
+class AddSerializedToWizards < ActiveRecord::Migration[5.2]AddSerializedToWizards2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000005_add_broom_to_wizard.rb,99
+class AddBroomToWizard < ActiveRecord::Migration[5.2]AddBroomToWizard2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000010_add_subject.rb,87
+class AddSubject < ActiveRecord::Migration[5.2]AddSubject2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000008_add_robe_to_wizard.rb,97
+class AddRobeToWizard < ActiveRecord::Migration[5.2]AddRobeToWizard2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000012_add_spell.rb,83
+class AddSpell < ActiveRecord::Migration[5.2]AddSpell2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000007_add_type_to_wizard.rb,97
+class AddTypeToWizard < ActiveRecord::Migration[5.2]AddTypeToWizard2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000003_create_spell_books.rb,99
+class CreateSpellBooks < ActiveRecord::Migration[5.2]CreateSpellBooks2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000009_add_school.rb,85
+class AddSchool < ActiveRecord::Migration[5.2]AddSchool2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000004_add_more_column_types_to_wands.rb,117
+class AddMoreColumnTypesToWands < ActiveRecord::Migration[5.2]AddMoreColumnTypesToWands2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000002_create_wands.rb,89
+class CreateWands < ActiveRecord::Migration[5.2]CreateWands2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000013_add_spells_spell_books.rb,105
+class AddSpellsSpellBooks < ActiveRecord::Migration[5.2]AddSpellsSpellBooks2,0
+  def changechange3,0
+
+spec/support/v5.2/db/migrate/20190620000001_create_wizards.rb,93
+class CreateWizards < ActiveRecord::Migration[5.2]CreateWizards2,0
+  def changechange3,0
+
+spec/support/v7.0/app/mailers/hogwarts_acceptance_mailer.rb,201
+class HogwartsAcceptanceMailer < ApplicationMailerHogwartsAcceptanceMailer2,0
+  def notify(student)notify6,0
+  def notify_teacher(notify_teacher18,0
+  def notify_retry(student)notify_retry26,0
+
+spec/support/v7.0/app/mailers/daily_prophet_mailer.rb,141
+class DailyProphetMailer < ApplicationMailerDailyProphetMailer2,0
+  def notify_subscribers(wizards:, hotnews_only:)notify_subscribers6,0
+
+spec/support/v7.0/app/mailers/application_mailer.rb,67
+class ApplicationMailer < ActionMailer::BaseApplicationMailer2,0
+
+spec/support/v7.0/app/models/wand.rb,338
+class Wand < ApplicationRecordWand2,0
+  belongs_to :wizard, required: truewizard14,0
+  belongs_to :wizard, required: truewizard=14,0
+  belongs_to :wizard, required: truebuild_wizard14,0
+  belongs_to :wizard, required: truecreate_wizard14,0
+  belongs_to :wizard, required: truecreate_wizard!14,0
+  def wood_typewood_type16,0
+
+spec/support/v7.0/app/models/potion.rb,311
+class Potion < ApplicationRecordPotion3,0
+  belongs_to :wizard, required: falsewizard5,0
+  belongs_to :wizard, required: falsewizard=5,0
+  belongs_to :wizard, required: falsebuild_wizard5,0
+  belongs_to :wizard, required: falsecreate_wizard5,0
+  belongs_to :wizard, required: falsecreate_wizard!5,0
+
+spec/support/v7.0/app/models/wizard.rb,1000
+class Wizard < ApplicationRecordWizard2,0
+  class Professor; endProfessor15,0
+  class Professor; endWizard::Professor15,0
+  has_one :wandwand55,0
+  has_one :wandwand=55,0
+  has_one :wandbuild_wand55,0
+  has_one :wandcreate_wand55,0
+  has_one :wandcreate_wand!55,0
+  has_many :spell_booksspell_books56,0
+  has_many :spell_booksspell_books=56,0
+  has_many :spell_booksspell_book_ids56,0
+  has_many :spell_booksspell_book_ids=56,0
+  has_and_belongs_to_many :subjectssubjects58,0
+  has_and_belongs_to_many :subjectssubjects=58,0
+  has_and_belongs_to_many :subjectssubject_ids58,0
+  has_and_belongs_to_many :subjectssubject_ids=58,0
+  belongs_to :school, optional: trueschool61,0
+  belongs_to :school, optional: trueschool=61,0
+  belongs_to :school, optional: truebuild_school61,0
+  belongs_to :school, optional: truecreate_school61,0
+  belongs_to :school, optional: truecreate_school!61,0
+  scope :recent, -> { where('created_at > ?', 1.month.ago) }recent63,0
+
+spec/support/v7.0/app/models/squib.rb,63
+class Squib < WizardSquib2,0
+  def is_magicalis_magical3,0
+
+spec/support/v7.0/app/models/robe.rb,307
+class Robe < ApplicationRecordRobe2,0
+  belongs_to :wizard, required: falsewizard3,0
+  belongs_to :wizard, required: falsewizard=3,0
+  belongs_to :wizard, required: falsebuild_wizard3,0
+  belongs_to :wizard, required: falsecreate_wizard3,0
+  belongs_to :wizard, required: falsecreate_wizard!3,0
+
+spec/support/v7.0/app/models/headmaster.rb,581
+class Headmaster < ApplicationRecordHeadmaster2,0
+  belongs_to :school, required: falseschool3,0
+  belongs_to :school, required: falseschool=3,0
+  belongs_to :school, required: falsebuild_school3,0
+  belongs_to :school, required: falsecreate_school3,0
+  belongs_to :school, required: falsecreate_school!3,0
+  belongs_to :wizard, optional: truewizard4,0
+  belongs_to :wizard, optional: truewizard=4,0
+  belongs_to :wizard, optional: truebuild_wizard4,0
+  belongs_to :wizard, optional: truecreate_wizard4,0
+  belongs_to :wizard, optional: truecreate_wizard!4,0
+
+spec/support/v7.0/app/models/subject.rb,242
+class Subject < ApplicationRecordSubject2,0
+  has_and_belongs_to_many :wizardswizards4,0
+  has_and_belongs_to_many :wizardswizards=4,0
+  has_and_belongs_to_many :wizardswizard_ids4,0
+  has_and_belongs_to_many :wizardswizard_ids=4,0
+
+spec/support/v7.0/app/models/spell_book.rb,573
+class SpellBook < ApplicationRecordSpellBook2,0
+  belongs_to :wizard, optional: truewizard6,0
+  belongs_to :wizard, optional: truewizard=6,0
+  belongs_to :wizard, optional: truebuild_wizard6,0
+  belongs_to :wizard, optional: truecreate_wizard6,0
+  belongs_to :wizard, optional: truecreate_wizard!6,0
+  has_and_belongs_to_many :spellsspells9,0
+  has_and_belongs_to_many :spellsspells=9,0
+  has_and_belongs_to_many :spellsspell_ids9,0
+  has_and_belongs_to_many :spellsspell_ids=9,0
+  scope :recent, -> { where('created_at > ?', 1.month.ago) }recent17,0
+
+spec/support/v7.0/app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord2,0
+
+spec/support/v7.0/app/models/concerns/mythical.rb,61
+module MythicalMythical3,0
+    def mythicalsmythicals7,0
+
+spec/support/v7.0/app/models/spell.rb,270
+class Spell < ApplicationRecordSpell2,0
+  has_and_belongs_to_many :spell_booksspell_books4,0
+  has_and_belongs_to_many :spell_booksspell_books=4,0
+  has_and_belongs_to_many :spell_booksspell_book_ids4,0
+  has_and_belongs_to_many :spell_booksspell_book_ids=4,0
+
+spec/support/v7.0/app/models/school.rb,251
+class School < ApplicationRecordSchool2,0
+  has_one :headmasterheadmaster3,0
+  has_one :headmasterheadmaster=3,0
+  has_one :headmasterbuild_headmaster3,0
+  has_one :headmastercreate_headmaster3,0
+  has_one :headmastercreate_headmaster!3,0
+
+spec/support/v7.0/app/jobs/award_house_point_hourglasses.rb,125
+class AwardHousePointHourglasses < ApplicationJobAwardHousePointHourglasses5,0
+  def perform(student:, point:)perform9,0
+
+spec/support/v7.0/app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob2,0
+
+spec/support/v7.0/app/controllers/application_controller.rb,79
+class ApplicationController < ActionController::BaseApplicationController2,0
+
+spec/support/v7.0/app/helpers/bar_helper.rb,31
+module BarHelperBarHelper2,0
+
+spec/support/v7.0/app/helpers/foo_helper.rb,31
+module FooHelperFooHelper2,0
+
+spec/support/v7.0/app/helpers/baz_helper.rb,31
+module BazHelperBazHelper2,0
+
+spec/support/v7.0/app/helpers/application_helper.rb,47
+module ApplicationHelperApplicationHelper2,0
+
+spec/support/v7.0/config/application.rb,141
+module V70V7022,0
+  class Application < Rails::ApplicationApplication23,0
+  class Application < Rails::ApplicationV70::Application23,0
+
+spec/support/v7.0/sorbet_test_cases.rb,226
+class MyActionParams < T::StructMyActionParams383,0
+  class Info < T::StructInfo384,0
+  class Info < T::StructMyActionParams::Info384,0
+class WizardStruct < T::StructWizardStruct412,0
+class TestHelperTestHelper428,0
+
+spec/support/v7.0/lib/mythical_rbi_plugin.rb,114
+class MythicalRbiPlugin < SorbetRails::ModelPlugins::BaseMythicalRbiPlugin2,0
+  def generate(root)generate3,0
+
+spec/support/v7.0/db/migrate/20190620000006_add_more_enums_to_wizard.rb,107
+class AddMoreEnumsToWizard < ActiveRecord::Migration[7.0]AddMoreEnumsToWizard2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000011_add_subjects_wizards.rb,103
+class AddSubjectsWizards < ActiveRecord::Migration[7.0]AddSubjectsWizards2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000014_create_headmasters.rb,101
+class CreateHeadmasters < ActiveRecord::Migration[7.0]CreateHeadmasters2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000015_add_serialized_to_wizards.rb,111
+class AddSerializedToWizards < ActiveRecord::Migration[7.0]AddSerializedToWizards2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000005_add_broom_to_wizard.rb,99
+class AddBroomToWizard < ActiveRecord::Migration[7.0]AddBroomToWizard2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000010_add_subject.rb,87
+class AddSubject < ActiveRecord::Migration[7.0]AddSubject2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000008_add_robe_to_wizard.rb,97
+class AddRobeToWizard < ActiveRecord::Migration[7.0]AddRobeToWizard2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000012_add_spell.rb,83
+class AddSpell < ActiveRecord::Migration[7.0]AddSpell2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000007_add_type_to_wizard.rb,97
+class AddTypeToWizard < ActiveRecord::Migration[7.0]AddTypeToWizard2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000003_create_spell_books.rb,99
+class CreateSpellBooks < ActiveRecord::Migration[7.0]CreateSpellBooks2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000009_add_school.rb,85
+class AddSchool < ActiveRecord::Migration[7.0]AddSchool2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000004_add_more_column_types_to_wands.rb,117
+class AddMoreColumnTypesToWands < ActiveRecord::Migration[7.0]AddMoreColumnTypesToWands2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000002_create_wands.rb,89
+class CreateWands < ActiveRecord::Migration[7.0]CreateWands2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000013_add_spells_spell_books.rb,105
+class AddSpellsSpellBooks < ActiveRecord::Migration[7.0]AddSpellsSpellBooks2,0
+  def changechange3,0
+
+spec/support/v7.0/db/migrate/20190620000001_create_wizards.rb,93
+class CreateWizards < ActiveRecord::Migration[7.0]CreateWizards2,0
+  def changechange3,0
+
+spec/generators/rails-template.rb,464
+def add_gemsadd_gems4,0
+def add_routesadd_routes19,0
+def add_environmentadd_environment23,0
+def create_initializerscreate_initializers32,0
+def create_libcreate_lib40,0
+def create_helperscreate_helpers61,0
+def create_modelscreate_models78,0
+def create_migrationscreate_migrations256,0
+def create_mailerscreate_mailers430,0
+def create_jobscreate_jobs474,0
+def add_sorbet_test_filesadd_sorbet_test_files490,0
+def source_pathssource_paths495,0
+
+spec/generators/sorbet_test_cases.rb,226
+class MyActionParams < T::StructMyActionParams375,0
+  class Info < T::StructInfo376,0
+  class Info < T::StructMyActionParams::Info376,0
+class WizardStruct < T::StructWizardStruct404,0
+class TestHelperTestHelper420,0
+
+spec/tstruct_comparable.rb,98
+module TStructComparableTStructComparable1,0
+  def ==(other)==2,0
+  def eql?(other)eql?10,0
+
+spec/rails_helper.rb,339
+TEST_DATA_FOLDER = "spec/test_data/#{rails_folder}"TEST_DATA_FOLDER28,0
+def expect_match_file(content, file_path)expect_match_file57,0
+FILE_SEPARATOR_RE = Regexp.union(*[File::SEPARATOR, File::ALT_SEPARATOR].compact).freezeFILE_SEPARATOR_RE69,0
+def expect_files(base_dir:, files:, expected_file_prefix: "expected")expect_files71,0
+
+lib/sorbet-rails.rb,35
+module SorbetRailsSorbetRails2,0
+
+lib/sorbet-rails/model_column_utils.rb,746
+module SorbetRails::ModelColumnUtilsModelColumnUtils2,0
+module SorbetRails::ModelColumnUtilsSorbetRails::ModelColumnUtils2,0
+  class ColumnType < T::StructColumnType8,0
+  class ColumnType < T::StructSorbetRails::ModelColumnUtils::ColumnType8,0
+    def to_sto_s16,0
+  def model_class; endmodel_class28,0
+  def type_for_column_def(column_def)type_for_column_def31,0
+  def time_zone_aware_column?(column_def, cast_type)time_zone_aware_column?60,0
+  def nilable_column?(column_def)nilable_column?76,0
+  def active_record_type_to_sorbet_type(klass, time_zone_aware: false)active_record_type_to_sorbet_type86,0
+  def attribute_has_unconditional_presence_validation?(attribute)attribute_has_unconditional_presence_validation?119,0
+
+lib/sorbet-rails/type_assert/type_assert.rb,154
+module TypeAssertImplTypeAssertImpl8,0
+class TATA11,0
+  Elem = type_memberElem16,0
+  Elem = type_memberTA::Elem16,0
+  def assert(val)assert19,0
+
+lib/sorbet-rails/type_assert/type_assert_interface.rb,195
+module ITypeAssertITypeAssert4,0
+  Elem = type_member(:out)Elem8,0
+  Elem = type_member(:out)ITypeAssert::Elem8,0
+  def assert(val); endassert13,0
+  def get_type; Elem; endget_type15,0
+
+lib/sorbet-rails/type_assert/type_assert_impl.rb,104
+  module TypeAssertImplTypeAssertImpl5,0
+    def self.included(klass)included6,0
+  class TATA23,0
+
+lib/sorbet-rails/gem_plugins/shrine_plugin.rb,104
+class ShrinePlugin < SorbetRails::ModelPlugins::BaseShrinePlugin2,0
+  def generate(root)generate4,0
+
+lib/sorbet-rails/gem_plugins/pg_search_plugin.rb,108
+class PgSearchPlugin < SorbetRails::ModelPlugins::BasePgSearchPlugin2,0
+  def generate(root)generate6,0
+
+lib/sorbet-rails/gem_plugins/flag_shih_tzu_plugin.rb,421
+class FlagShihTzuPlugin < SorbetRails::ModelPlugins::BaseFlagShihTzuPlugin2,0
+  def generate(root)generate4,0
+  def add_class_methods(custom_module_rbi)add_class_methods46,0
+  def add_methods_for_column(column, custom_module_rbi)add_methods_for_column124,0
+  def add_methods_for_flag(column, flag_key, custom_module_rbi)add_methods_for_flag160,0
+  def really_has_the_flag?(flag_name)really_has_the_flag?198,0
+
+lib/sorbet-rails/gem_plugins/aasm_plugin.rb,100
+class AasmPlugin < SorbetRails::ModelPlugins::BaseAasmPlugin2,0
+  def generate(root)generate4,0
+
+lib/sorbet-rails/gem_plugins/active_flag_plugin.rb,170
+class ActiveFlagPlugin < SorbetRails::ModelPlugins::BaseActiveFlagPlugin2,0
+  def generate(root)generate4,0
+  def active_flag_keys(model_class)active_flag_keys43,0
+
+lib/sorbet-rails/gem_plugins/attr_json_plugin.rb,380
+class AttrJsonPlugin < SorbetRails::ModelPlugins::BaseAttrJsonPlugin2,0
+  def generate(root)generate4,0
+  def add_class_methods(custom_module_rbi)add_class_methods38,0
+  def add_methods_for_attributes(definition, custom_module_rbi)add_methods_for_attributes76,0
+  def get_definition_type(definition)get_definition_type117,0
+  def type_to_class(type)type_to_class127,0
+
+lib/sorbet-rails/gem_plugins/paperclip_plugin.rb,110
+class PaperclipPlugin < SorbetRails::ModelPlugins::BasePaperclipPlugin2,0
+  def generate(root)generate4,0
+
+lib/sorbet-rails/gem_plugins/money_rails_plugin.rb,156
+class MoneyRailsPlugin < SorbetRails::ModelPlugins::BaseMoneyRailsPlugin2,0
+  def allows_nil(attribute)allows_nil4,0
+  def generate(root)generate15,0
+
+lib/sorbet-rails/gem_plugins/friendly_id_plugin.rb,112
+class FriendlyIdPlugin < SorbetRails::ModelPlugins::BaseFriendlyIdPlugin2,0
+  def generate(root)generate4,0
+
+lib/sorbet-rails/gem_plugins/kaminari_plugin.rb,108
+class KaminariPlugin < SorbetRails::ModelPlugins::BaseKaminariPlugin2,0
+  def generate(root)generate5,0
+
+lib/sorbet-rails/gem_plugins/elastic_search_plugin.rb,118
+class ElasticSearchPlugin < SorbetRails::ModelPlugins::BaseElasticSearchPlugin2,0
+  def generate(root)generate4,0
+
+lib/sorbet-rails/model_plugins/base.rb,648
+module SorbetRails::ModelPluginsModelPlugins4,0
+module SorbetRails::ModelPluginsSorbetRails::ModelPlugins4,0
+  class Base < ::Parlour::PluginBase5,0
+  class Base < ::Parlour::PluginSorbetRails::ModelPlugins::Base5,0
+    Parameter = ::Parlour::RbiGenerator::ParameterParameter13,0
+    Parameter = ::Parlour::RbiGenerator::ParameterSorbetRails::ModelPlugins::Base::Parameter13,0
+    attr_reader :model_classmodel_class16,0
+    attr_reader :available_classesavailable_classes19,0
+    def initialize(model_class, available_classes)initialize28,0
+    def serialization_coder_for_column(column_name)serialization_coder_for_column34,0
+
+lib/sorbet-rails/model_plugins/active_record_assoc.rb,972
+class SorbetRails::ModelPlugins::ActiveRecordAssoc < SorbetRails::ModelPlugins::BaseActiveRecordAssoc3,0
+class SorbetRails::ModelPlugins::ActiveRecordAssoc < SorbetRails::ModelPlugins::BaseSorbetRails::ModelPlugins::ActiveRecordAssoc3,0
+  def initialize(model_class, available_classes)initialize5,0
+  def generate(root)generate11,0
+  def populate_single_assoc_getter_setter(assoc_module_rbi, assoc_name, reflection)populate_single_assoc_getter_setter34,0
+  private def belongs_to_and_required?(reflection)belongs_to_and_required?77,0
+  private def has_one_and_required?(reflection)has_one_and_required?118,0
+  def populate_collection_assoc_getter_setter(assoc_module_rbi, assoc_name, reflection)populate_collection_assoc_getter_setter129,0
+  def assoc_should_be_untyped?(reflection)assoc_should_be_untyped?171,0
+  def relation_should_be_untyped?(reflection)relation_should_be_untyped?184,0
+  def polymorphic_assoc?(reflection)polymorphic_assoc?190,0
+
+lib/sorbet-rails/model_plugins/enumerable_collections.rb,291
+class SorbetRails::ModelPlugins::EnumerableCollections < SorbetRails::ModelPlugins::BaseEnumerableCollections3,0
+class SorbetRails::ModelPlugins::EnumerableCollections < SorbetRails::ModelPlugins::BaseSorbetRails::ModelPlugins::EnumerableCollections3,0
+  def generate(root)generate6,0
+
+lib/sorbet-rails/model_plugins/custom_finder_methods.rb,283
+class SorbetRails::ModelPlugins::CustomFinderMethods < SorbetRails::ModelPlugins::BaseCustomFinderMethods3,0
+class SorbetRails::ModelPlugins::CustomFinderMethods < SorbetRails::ModelPlugins::BaseSorbetRails::ModelPlugins::CustomFinderMethods3,0
+  def generate(root)generate6,0
+
+lib/sorbet-rails/model_plugins/active_record_named_scope.rb,295
+class SorbetRails::ModelPlugins::ActiveRecordNamedScope < SorbetRails::ModelPlugins::BaseActiveRecordNamedScope4,0
+class SorbetRails::ModelPlugins::ActiveRecordNamedScope < SorbetRails::ModelPlugins::BaseSorbetRails::ModelPlugins::ActiveRecordNamedScope4,0
+  def generate(root)generate7,0
+
+lib/sorbet-rails/model_plugins/active_record_attribute.rb,426
+class SorbetRails::ModelPlugins::ActiveRecordAttribute < SorbetRails::ModelPlugins::BaseActiveRecordAttribute3,0
+class SorbetRails::ModelPlugins::ActiveRecordAttribute < SorbetRails::ModelPlugins::BaseSorbetRails::ModelPlugins::ActiveRecordAttribute3,0
+  def generate(root)generate6,0
+  def generate_enum_methods(generate_enum_methods61,0
+  def value_type_for_attr_writer(column_type)value_type_for_attr_writer129,0
+
+lib/sorbet-rails/model_plugins/active_record_serialized_attribute.rb,478
+class SorbetRails::ModelPlugins::ActiveRecordSerializedAttribute < SorbetRails::ModelPlugins::BaseActiveRecordSerializedAttribute3,0
+class SorbetRails::ModelPlugins::ActiveRecordSerializedAttribute < SorbetRails::ModelPlugins::BaseSorbetRails::ModelPlugins::ActiveRecordSerializedAttribute3,0
+  def generate(root)generate6,0
+  def any_serialized_columns?(columns_hash)any_serialized_columns?44,0
+  def attr_types_for_coder(serialization_coder)attr_types_for_coder51,0
+
+lib/sorbet-rails/model_plugins/plugins.rb,568
+module SorbetRails::ModelPluginsModelPlugins14,0
+module SorbetRails::ModelPluginsSorbetRails::ModelPlugins14,0
+  def register_plugin(plugin)register_plugin21,0
+  def set_plugins(plugins)set_plugins26,0
+  def get_pluginsget_plugins31,0
+  def register_plugin_by_name(plugin_name)register_plugin_by_name36,0
+  def get_plugin_by_name(plugin_name)get_plugin_by_name41,0
+  class UnrecognizedPluginName < StandardError; endUnrecognizedPluginName104,0
+  class UnrecognizedPluginName < StandardError; endSorbetRails::ModelPlugins::UnrecognizedPluginName104,0
+
+lib/sorbet-rails/model_plugins/active_relation_where_not.rb,295
+class SorbetRails::ModelPlugins::ActiveRelationWhereNot < SorbetRails::ModelPlugins::BaseActiveRelationWhereNot3,0
+class SorbetRails::ModelPlugins::ActiveRelationWhereNot < SorbetRails::ModelPlugins::BaseSorbetRails::ModelPlugins::ActiveRelationWhereNot3,0
+  def generate(root)generate6,0
+
+lib/sorbet-rails/model_plugins/active_record_querying.rb,368
+class SorbetRails::ModelPlugins::ActiveRecordQuerying < SorbetRails::ModelPlugins::BaseActiveRecordQuerying3,0
+class SorbetRails::ModelPlugins::ActiveRecordQuerying < SorbetRails::ModelPlugins::BaseSorbetRails::ModelPlugins::ActiveRecordQuerying3,0
+  def generate(root)generate6,0
+  def create_in_batches_method(root, inner_type:)create_in_batches_method117,0
+
+lib/sorbet-rails/model_plugins/active_record_enum.rb,271
+class SorbetRails::ModelPlugins::ActiveRecordEnum < SorbetRails::ModelPlugins::BaseActiveRecordEnum4,0
+class SorbetRails::ModelPlugins::ActiveRecordEnum < SorbetRails::ModelPlugins::BaseSorbetRails::ModelPlugins::ActiveRecordEnum4,0
+  def generate(root)generate7,0
+
+lib/sorbet-rails/model_plugins/active_storage_methods.rb,502
+class SorbetRails::ModelPlugins::ActiveStorageMethods < SorbetRails::ModelPlugins::BaseActiveStorageMethods3,0
+class SorbetRails::ModelPlugins::ActiveStorageMethods < SorbetRails::ModelPlugins::BaseSorbetRails::ModelPlugins::ActiveStorageMethods3,0
+  def initialize(model_class, available_classes)initialize5,0
+  def generate(root)generate10,0
+  def create_has_one_methods(assoc_name, mod)create_has_one_methods30,0
+  def create_has_many_methods(assoc_name, mod)create_has_many_methods46,0
+
+lib/sorbet-rails/active_record_rbi_formatter.rb,693
+class SorbetRails::ActiveRecordRbiFormatterActiveRecordRbiFormatter4,0
+class SorbetRails::ActiveRecordRbiFormatterSorbetRails::ActiveRecordRbiFormatter4,0
+  Parameter = ::Parlour::RbiGenerator::ParameterParameter7,0
+  Parameter = ::Parlour::RbiGenerator::ParameterSorbetRails::ActiveRecordRbiFormatter::Parameter7,0
+  def generate_active_record_base_rbigenerate_active_record_base_rbi10,0
+  def generate_active_record_relation_rbigenerate_active_record_relation_rbi29,0
+  def create_elem_specific_query_methods(class_rbi, type:, class_method:)create_elem_specific_query_methods196,0
+  def create_general_query_methods(class_rbi, class_method:)create_general_query_methods296,0
+
+lib/sorbet-rails/mailer_rbi_formatter.rb,536
+module SorbetRailsSorbetRails5,0
+  class MailerRbiFormatterMailerRbiFormatter6,0
+  class MailerRbiFormatterSorbetRails::MailerRbiFormatter6,0
+    Parameter = ::Parlour::RbiGenerator::ParameterParameter9,0
+    Parameter = ::Parlour::RbiGenerator::ParameterSorbetRails::MailerRbiFormatter::Parameter9,0
+    attr_reader :rbi_generatorrbi_generator12,0
+    attr_reader :mailer_classmailer_class15,0
+    def initialize(mailer_class)initialize18,0
+    def populate_rbipopulate_rbi24,0
+    def generate_rbigenerate_rbi45,0
+
+lib/sorbet-rails/utils.rb,211
+module SorbetRails::UtilsUtils3,0
+module SorbetRails::UtilsSorbetRails::Utils3,0
+  def self.rails_eager_load_all!rails_eager_load_all!7,0
+  def self.valid_method_name?(method_name)valid_method_name?22,0
+
+lib/sorbet-rails/model_rbi_formatter.rb,442
+class SorbetRails::ModelRbiFormatterModelRbiFormatter6,0
+class SorbetRails::ModelRbiFormatterSorbetRails::ModelRbiFormatter6,0
+  attr_reader :model_classmodel_class12,0
+  attr_reader :available_classesavailable_classes15,0
+  def initialize(model_class, available_classes)initialize24,0
+  def generate_rbigenerate_rbi39,0
+  def generate_base_rbi(root)generate_base_rbi73,0
+  def run_plugins(plugins, generator)run_plugins124,0
+
+lib/sorbet-rails/railtie.rb,370
+class SorbetRails::Railtie < Rails::RailtieRailtie6,0
+class SorbetRails::Railtie < Rails::RailtieSorbetRails::Railtie6,0
+      class ::ActiveRecord::BaseBase26,0
+      class ::ActiveRecord::BaseSorbetRails::Railtie::ActiveRecord::Base26,0
+          alias_method :sbr_old_inherited, :inheritedsbr_old_inherited29,0
+          def inherited(child)inherited31,0
+
+lib/sorbet-rails/deprecation.rb,258
+module SorbetRailsSorbetRails4,0
+  TypeAssertDeprecation = ActiveSupport::Deprecation.new('0.7', 'SorbetRails')TypeAssertDeprecation5,0
+  TypeAssertDeprecation = ActiveSupport::Deprecation.new('0.7', 'SorbetRails')SorbetRails::TypeAssertDeprecation5,0
+
+lib/sorbet-rails/config.rb,990
+module SorbetRailsSorbetRails5,0
+    def configure(&blk)configure10,0
+    def configconfig19,0
+    def register_configured_pluginsregister_configured_plugins24,0
+  class ConfigConfig31,0
+  class ConfigSorbetRails::Config31,0
+    attr_accessor :enabled_gem_pluginsenabled_gem_plugins35,0
+    attr_accessor :enabled_gem_pluginsenabled_gem_plugins=35,0
+    attr_accessor :enabled_model_pluginsenabled_model_plugins38,0
+    attr_accessor :enabled_model_pluginsenabled_model_plugins=38,0
+    attr_accessor :extra_helper_includesextra_helper_includes41,0
+    attr_accessor :extra_helper_includesextra_helper_includes=41,0
+    attr_accessor :job_generator_classjob_generator_class44,0
+    attr_accessor :job_generator_classjob_generator_class=44,0
+    attr_accessor :mailer_generator_classmailer_generator_class47,0
+    attr_accessor :mailer_generator_classmailer_generator_class=47,0
+    def initializeinitialize50,0
+    def enabled_pluginsenabled_plugins70,0
+
+lib/sorbet-rails/typed_params.rb,122
+  module TypedParamsTypedParams5,0
+        define_method(:extract!) do |params, raise_coercion_error: nil|extract!9,0
+
+lib/sorbet-rails/model_utils.rb,1030
+module SorbetRails::ModelUtilsModelUtils3,0
+module SorbetRails::ModelUtilsSorbetRails::ModelUtils3,0
+  def habtm_class?habtm_class?17,0
+  def model_class_namemodel_class_name24,0
+  def model_relation_class_namemodel_relation_class_name29,0
+  def model_assoc_proxy_class_namemodel_assoc_proxy_class_name34,0
+  def model_assoc_relation_class_namemodel_assoc_relation_class_name39,0
+  def model_query_methods_returning_relation_module_namemodel_query_methods_returning_relation_module_name44,0
+  def model_query_methods_returning_assoc_relation_module_namemodel_query_methods_returning_assoc_relation_module_name49,0
+  def model_relation_type_aliasmodel_relation_type_alias54,0
+  def model_relation_type_class_namemodel_relation_type_class_name65,0
+  def model_module_name(module_name)model_module_name70,0
+  def exists_instance_method?(method_name)exists_instance_method?75,0
+  def exists_class_method?(method_name)exists_class_method?80,0
+  def add_relation_query_method(add_relation_query_method96,0
+
+lib/sorbet-rails/helper_rbi_formatter.rb,213
+class SorbetRails::HelperRbiFormatterHelperRbiFormatter3,0
+class SorbetRails::HelperRbiFormatterSorbetRails::HelperRbiFormatter3,0
+  def initialize(helpers)initialize8,0
+  def generate_rbigenerate_rbi16,0
+
+lib/sorbet-rails/rails_mixins/generated_url_helpers.rb,84
+GeneratedUrlHelpers = Rails.application.routes.url_helpersGeneratedUrlHelpers15,0
+
+lib/sorbet-rails/rails_mixins/custom_finder_methods.rb,427
+module SorbetRailsSorbetRails2,0
+  module CustomFinderMethodsCustomFinderMethods3,0
+  module CustomFinderMethodsSorbetRails::CustomFinderMethods3,0
+    def find_n(*ids)find_n4,0
+    def first_n(n)first_n8,0
+    def last_n(n)last_n12,0
+    def select_columns(*args)select_columns16,0
+    def find_by_id(id)find_by_id22,0
+    def find_by_id!(id)find_by_id!26,0
+      def where_missing(*args)where_missing33,0
+
+lib/sorbet-rails/rails_mixins/pluck_to_tstruct.rb,835
+module SorbetRails::PluckToTStructPluckToTStruct4,0
+module SorbetRails::PluckToTStructSorbetRails::PluckToTStruct4,0
+  NILCLASS_STRING = "NilClass".freezeNILCLASS_STRING7,0
+  NILCLASS_STRING = "NilClass".freezeSorbetRails::PluckToTStruct::NILCLASS_STRING7,0
+  def pluck_to_tstruct(ta_struct, associations: {})pluck_to_tstruct17,0
+  private def nilable?(type_object)nilable?46,0
+  private def map_nil_values_to_default(tstruct_props, zipped_rows)map_nil_values_to_default59,0
+  class UnexpectedType < StandardError; endUnexpectedType78,0
+  class UnexpectedType < StandardError; endSorbetRails::PluckToTStruct::UnexpectedType78,0
+  class UnexpectedAssociations < StandardError; endUnexpectedAssociations79,0
+  class UnexpectedAssociations < StandardError; endSorbetRails::PluckToTStruct::UnexpectedAssociations79,0
+
+lib/sorbet-rails/rails_mixins/active_record_overrides.rb,1389
+class ActiveRecordOverridesActiveRecordOverrides5,0
+  attr_reader :enum_callsenum_calls8,0
+  def initializeinitialize10,0
+  def store_enum_call(klass, kwargs)store_enum_call14,0
+  def get_enum_call(klass, enum_sym)get_enum_call27,0
+class SorbetRails::TypedEnumConfig < T::StructTypedEnumConfig36,0
+class SorbetRails::TypedEnumConfig < T::StructSorbetRails::TypedEnumConfig36,0
+module ::ActiveRecord::EnumEnum42,0
+module ::ActiveRecord::EnumActiveRecord::Enum42,0
+  alias old_enum enumold_enum46,0
+  SR_ENUM_KEYWORDS = [SR_ENUM_KEYWORDS48,0
+  SR_ENUM_KEYWORDS = [ActiveRecord::Enum::SR_ENUM_KEYWORDS48,0
+  def _define_enum(definitions)_define_enum56,0
+  def enum(definitions)enum62,0
+  def typed_enum(definitions)typed_enum83,0
+  def typed_enum_reflectionstyped_enum_reflections105,0
+  def _define_typed_enum(_define_typed_enum117,0
+  def gen_typed_enum_values(enum_values)gen_typed_enum_values171,0
+  def extract_enum_values(enum_def)extract_enum_values186,0
+  class MultipleEnumsDefinedError < StandardError; endMultipleEnumsDefinedError190,0
+  class MultipleEnumsDefinedError < StandardError; endActiveRecord::Enum::MultipleEnumsDefinedError190,0
+  class ConflictTypedEnumNameError < StandardError; endConflictTypedEnumNameError191,0
+  class ConflictTypedEnumNameError < StandardError; endActiveRecord::Enum::ConflictTypedEnumNameError191,0
+
+lib/sorbet-rails/job_rbi_formatter.rb,512
+module SorbetRailsSorbetRails5,0
+  class JobRbiFormatterJobRbiFormatter6,0
+  class JobRbiFormatterSorbetRails::JobRbiFormatter6,0
+    Parameter = ::Parlour::RbiGenerator::ParameterParameter9,0
+    Parameter = ::Parlour::RbiGenerator::ParameterSorbetRails::JobRbiFormatter::Parameter9,0
+    attr_reader :rbi_generatorrbi_generator12,0
+    attr_reader :job_classjob_class15,0
+    def initialize(job_class)initialize18,0
+    def populate_rbipopulate_rbi24,0
+    def generate_rbigenerate_rbi82,0
+
+lib/sorbet-rails/routes_rbi_formatter.rb,410
+class SorbetRails::RoutesRbiFormatterRoutesRbiFormatter2,0
+class SorbetRails::RoutesRbiFormatterSorbetRails::RoutesRbiFormatter2,0
+  def initializeinitialize6,0
+  def section_title(title)section_title11,0
+  def section(routes)section16,0
+  def header(routes)header21,0
+  def no_routes(routes = nil, filter = nil)no_routes53,0
+  def resultresult62,0
+  def draw_section(routes)draw_section69,0

@@ -26,7 +26,12 @@ module SorbetRails
 
       parameters_with_type = if signature.nil?
         method_def.parameters.map do |p|
-          name = if (p.size == 1) ? :_ : p[1]
+          name = if p.size == 1
+            :_
+          else
+            p[1]
+          end
+
           name = :_ if name == :*
 
           ParsedParamDef.new(
