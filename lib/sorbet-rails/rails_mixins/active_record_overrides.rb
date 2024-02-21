@@ -14,7 +14,7 @@ class ActiveRecordOverrides
   def store_enum_call(klass, name, options)
     class_name = klass.name
     @enum_calls[class_name] ||= {}
-    @enum_calls[class_name][name] = options
+    @enum_calls[class_name][name] = options.dup
   end
 
   def get_enum_call(klass, enum_sym)
