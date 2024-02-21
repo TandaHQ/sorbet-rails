@@ -29,13 +29,13 @@ class SorbetRails::ModelPlugins::ActiveRecordEnum < SorbetRails::ModelPlugins::B
         class_method: true,
       )
 
-      enum_call = ActiveRecordOverrides.instance.get_enum_call(@model_class, enum_name.to_sym)
-      if enum_call.nil?
+      enum_options = ActiveRecordOverrides.instance.get_enum_call(@model_class, enum_name.to_sym)
+      if enum_options.nil?
         puts "Error: unable to find enum call for enum #{enum_name}, model #{self.model_class_name}"
         next
       end
 
-      enum_prefix = enum_call[:_prefix]
+      enum_prefix = enum_options[:prefix]
       prefix =
         if enum_prefix == true
           "#{enum_name}_"
@@ -44,7 +44,7 @@ class SorbetRails::ModelPlugins::ActiveRecordEnum < SorbetRails::ModelPlugins::B
         else
           ''
         end
-      enum_suffix = enum_call[:_suffix]
+      enum_suffix = enum_options[:suffix]
       suffix =
         if enum_suffix == true
           "_#{enum_name}"
