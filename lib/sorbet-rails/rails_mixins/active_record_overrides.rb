@@ -11,10 +11,10 @@ class ActiveRecordOverrides
     @enum_calls = {}
   end
 
-  def store_enum_call(klass, name, values)
+  def store_enum_call(klass, name, options)
     class_name = klass.name
     @enum_calls[class_name] ||= {}
-    @enum_calls[class_name][name] = values.dup
+    @enum_calls[class_name][name] = options
   end
 
   def get_enum_call(klass, enum_sym)
@@ -46,7 +46,7 @@ module ::ActiveRecord::Enum
   ]
 
   def _define_enum(name, values, **options)
-    ActiveRecordOverrides.instance.store_enum_call(self, name, values)
+    ActiveRecordOverrides.instance.store_enum_call(self, name, options)
     old_enum(name, values, **options)
   end
 
