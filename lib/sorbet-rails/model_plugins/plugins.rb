@@ -3,7 +3,6 @@ require('sorbet-rails/model_plugins/base')
 require('sorbet-rails/model_plugins/active_record_enum')
 require('sorbet-rails/model_plugins/active_record_querying')
 require('sorbet-rails/model_plugins/active_relation_where_associated')
-require('sorbet-rails/model_plugins/active_relation_where_missing')
 require('sorbet-rails/model_plugins/active_relation_where_not')
 require('sorbet-rails/model_plugins/active_record_named_scope')
 require('sorbet-rails/model_plugins/active_record_attribute')
@@ -50,8 +49,6 @@ module SorbetRails::ModelPlugins
       ActiveRecordQuerying
     when :active_relation_where_associated
       ActiveRelationWhereAssociated
-    when :active_relation_where_missing
-      ActiveRelationWhereMissing
     when :active_relation_where_not
       ActiveRelationWhereNot
     when :active_record_serialized_attribute
