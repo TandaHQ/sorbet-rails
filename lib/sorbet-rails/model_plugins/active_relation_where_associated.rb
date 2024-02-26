@@ -12,7 +12,7 @@ class SorbetRails::ModelPlugins::ActiveRelationWhereAssociated < SorbetRails::Mo
     model_relation_class_rbi.create_include(where_associated_module_name)
 
     model_assoc_relation_rbi = root.create_class(self.model_assoc_relation_class_name)
-    model_assoc_relation_rib.create_include(where_associated_module_name)
+    model_assoc_relation_rbi.create_include(where_associated_module_name)
 
     where_associated_module_rbi.create_method(
       'associated',

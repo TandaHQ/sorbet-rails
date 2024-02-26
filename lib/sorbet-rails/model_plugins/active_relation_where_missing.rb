@@ -12,7 +12,7 @@ class SorbetRails::ModelPlugins::ActiveRelationWhereMissing < SorbetRails::Model
     model_relation_class_rbi.create_include(where_missing_module_name)
 
     model_assoc_relation_rbi = root.create_class(self.model_assoc_relation_class_name)
-    model_assoc_relation_rib.create_include(where_missing_module_name)
+    model_assoc_relation_rbi.create_include(where_missing_module_name)
 
     where_missing_module_rbi.create_method(
       'missing',
