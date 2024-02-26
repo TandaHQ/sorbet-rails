@@ -3,7 +3,7 @@
 require 'sorbet-rails/model_plugins/base'
 
 class SorbetRails::ModelPlugins::ActiveRelationWhereAssociated < SorbetRails::ModelPlugins::Base
-  sig { override.parms(root: Parlour::RbiGenerator::Namespace).void }
+  sig { override.params(root: Parlour::RbiGenerator::Namespace).void }
   def generate(root)
     where_associated_module_name = self.model_module_name('AciveRelation_WhereAssociated')
     where_associated_module_rbi = root.create_module(where_associated_module_name)
