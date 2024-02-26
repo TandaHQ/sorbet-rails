@@ -53,6 +53,8 @@ module SorbetRails
         :active_record_enum,
         :active_record_named_scope,
         :active_record_querying,
+        :active_relation_where_associated,
+        :active_relation_where_missing,
         :active_relation_where_not,
         :active_record_serialized_attribute,
         :active_record_attribute,
