@@ -185,8 +185,8 @@ namespace :rails_rbi do
   def whitelisted_models
     # force generating these models because they aren't loaded with eager_load!
     whitelisted_models = []
-    whitelisted_models << ActiveRecord::InternalMetadata if Object.const_defined?('ActiveRecord::InternalMetadata')
-    whitelisted_models << ActiveRecord::SchemaMigration if Object.const_defined?('ActiveRecord::SchemaMigration')
+    whitelisted_models << ActiveRecord::InternalMetadata if Object.const_defined?('ActiveRecord::InternalMetadata') && ActiveRecord::InternalMetadata < ActiveRecord::Base
+    whitelisted_models << ActiveRecord::SchemaMigration if Object.const_defined?('ActiveRecord::SchemaMigration') && ActiveRecord::SchemaMigration < ActiveRecord::Base
     whitelisted_models
   end
 
