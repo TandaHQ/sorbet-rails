@@ -54,16 +54,18 @@ class SorbetRails::ModelPlugins::ActiveRecordEnum < SorbetRails::ModelPlugins::B
           ''
         end
 
-      enum_hash.keys.each do |enum_val|
-        next unless SorbetRails::Utils.valid_method_name?(enum_val.to_s)
-        enum_module_rbi.create_method(
-          "#{prefix}#{enum_val}#{suffix}?",
-          return_type: "T::Boolean",
-        )
-        enum_module_rbi.create_method(
-          "#{prefix}#{enum_val}#{suffix}!",
-          return_type: nil, # void
-        )
+      if enum_options.fetch(:instance_methods, true)
+        enum_hash.keys.each do |enum_val|
+          next unless SorbetRails::Utils.valid_method_name?(enum_val.to_s)
+          enum_module_rbi.create_method(
+            "#{prefix}#{enum_val}#{suffix}?",
+            return_type: "T::Boolean",
+          )
+          enum_module_rbi.create_method(
+            "#{prefix}#{enum_val}#{suffix}!",
+            return_type: nil, # void
+          )
+        end
       end
     end
   end
