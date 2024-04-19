@@ -70,6 +70,11 @@ class SorbetRails::ActiveRecordRbiFormatter
         return_type: "T::Array[T.type_parameter(:U)]",
       )
       class_rbi.create_method('empty?', return_type: "T::Boolean")
+      class_rbi.create_method(
+        "uniq",
+        parameters: [ Parameter.new("&block", type: "T.nilable(T.proc.params(object: Elem).returns(T.untyped))"), ],
+        return_type: "T::Array[Elem]",
+      )
     end
 
     parlour.root.create_class("ActiveRecord::AssociationRelation", superclass: "ActiveRecord::Relation") do |class_rbi|
