@@ -38,7 +38,7 @@ class SorbetRails::HelperRbiFormatter
       @parlour.root.create_module('ActionController::Helpers') do |mod|
         mod.create_method(
           'helpers',
-          return_type: "T.all(#{@helpers.join(', ')})"
+          return_type: "T.untyped"
         )
       end
     end
