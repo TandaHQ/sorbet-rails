@@ -188,7 +188,7 @@ class SorbetRails::ModelPlugins::ActiveRecordAssoc < SorbetRails::ModelPlugins::
 
   sig { params(reflection: T.untyped).returns(T.nilable(T::Boolean)) }
   def polymorphic_assoc?(reflection)
-    return if reflection.nil
+    return if reflection.nil?
 
     reflection.through_reflection ?
       polymorphic_assoc?(reflection.source_reflection) :
