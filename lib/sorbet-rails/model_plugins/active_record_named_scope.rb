@@ -33,7 +33,8 @@ class SorbetRails::ModelPlugins::ActiveRecordNamedScope < SorbetRails::ModelPlug
         method_name.to_s,
         parameters: [
           Parameter.new("*args", type: "T.untyped"),
-        ],
+          Parameter.new("**_arg1", type: "T.untyped")
+        ]
       )
     end
   end
