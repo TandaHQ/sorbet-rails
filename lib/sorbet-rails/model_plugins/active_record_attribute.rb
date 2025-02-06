@@ -115,17 +115,19 @@ class SorbetRails::ModelPlugins::ActiveRecordAttribute < SorbetRails::ModelPlugi
       return_type = "String"
       return_type = "T.nilable(#{return_type})" if nilable_column
 
-      attribute_module_rbi.create_method(
-        column_name.to_s,
-        return_type: return_type,
-      )
-      attribute_module_rbi.create_method(
-        "#{column_name}=",
-        parameters: [
-          Parameter.new("value", type: assignable_type)
-        ],
-        return_type: nil,
-      )
+      column_name_and_aliases(column_name).each do |name|
+        attribute_module_rbi.create_method(
+          name.to_s,
+          return_type: return_type,
+        )
+        attribute_module_rbi.create_method(
+          "#{name}=",
+          parameters: [
+            Parameter.new("value", type: assignable_type)
+          ],
+          return_type: nil,
+        )
+      end
     end
   end
 
