@@ -28,23 +28,27 @@ class SorbetRails::ModelPlugins::ActiveRecordAttribute < SorbetRails::ModelPlugi
         next # handled by the ActiveRecordSerializedAttribute plugin
       else
         column_type = type_for_column_def(column_def)
-        attribute_module_rbi.create_method(
-          column_name.to_s,
-          return_type: column_type.to_s,
-        )
-        attribute_module_rbi.create_method(
-          "#{column_name}=",
-          parameters: [
-            Parameter.new("value", type: value_type_for_attr_writer(column_type))
-          ],
-          return_type: nil,
-        )
+        column_name_and_aliases(column_name).each do |name|
+          attribute_module_rbi.create_method(
+            name.to_s,
+            return_type: column_type.to_s,
+          )
+          attribute_module_rbi.create_method(
+            "#{name}=",
+            parameters: [
+              Parameter.new("value", type: value_type_for_attr_writer(column_type))
+            ],
+            return_type: nil,
+          )
+        end
       end
 
-      attribute_module_rbi.create_method(
-        "#{column_name}?",
-        return_type: "T::Boolean",
-      )
+      column_name_and_aliases(column_name).each do |name|
+        attribute_module_rbi.create_method(
+          "#{name}?",
+          return_type: "T::Boolean",
+        )
+      end
     end
   end
 

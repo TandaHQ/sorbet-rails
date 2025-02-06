@@ -44,5 +44,12 @@ module SorbetRails::ModelPlugins
         Object
       end
     end
+
+    sig { params(column_name: String).returns(T::Array[String]) }
+    def column_name_and_aliases(column_name)
+      @model_class.attribute_aliases.each_with_object([column_name]) do |(alias_name, target_name), names|
+        names << alias_name if target_name == column_name
+      end
+    end
   end
 end
