@@ -33,7 +33,7 @@ module SorbetRails::ModelColumnUtils
       if connection.respond_to?(:lookup_cast_type_from_column)
         connection.lookup_cast_type_from_column(column_def)
       else
-        column_def.cast_type
+        column_def.fetch_cast_type(connection)
       end
     end
 
