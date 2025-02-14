@@ -32,8 +32,10 @@ module SorbetRails::ModelColumnUtils
     cast_type = ActiveRecord::Base.with_connection do |connection|
       if connection.respond_to?(:lookup_cast_type_from_column)
         connection.lookup_cast_type_from_column(column_def)
-      else
+      elsif column_def.respond_to?(:fetch_cast_type)
         column_def.fetch_cast_type(connection)
+      else
+        column_def.cast_type
       end
     end
 
