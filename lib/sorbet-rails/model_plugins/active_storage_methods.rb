@@ -30,7 +30,7 @@ class SorbetRails::ModelPlugins::ActiveStorageMethods < SorbetRails::ModelPlugin
   def create_has_one_methods(assoc_name, mod)
     mod.create_method(
       assoc_name,
-      return_type: 'T.nilable(ActiveStorage::Attached::One)'
+      return_type: 'ActiveStorage::Attached::One'
     )
 
     mod.create_method(
@@ -46,7 +46,7 @@ class SorbetRails::ModelPlugins::ActiveStorageMethods < SorbetRails::ModelPlugin
   def create_has_many_methods(assoc_name, mod)
     mod.create_method(
       assoc_name,
-      return_type: 'T.nilable(ActiveStorage::Attached::Many)'
+      return_type: 'ActiveStorage::Attached::Many'
     )
 
     mod.create_method(
