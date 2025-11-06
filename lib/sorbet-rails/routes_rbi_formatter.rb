@@ -58,6 +58,13 @@ class SorbetRails::RoutesRbiFormatter
     ])
   end
 
+  sig { params(routes: T.untyped).void }
+  def footer(routes)
+    # No-op method for Rails 8.2+ compatibility
+    # Rails 8.2 calls footer() at the end of format_routes
+    nil
+  end
+
   sig { returns(String) }
   def result
     @parlour.rbi
