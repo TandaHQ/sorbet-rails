@@ -34,6 +34,7 @@ module SorbetRails
 
           name = :_ if name == :*
           name = :__ if name == :**
+          name = :blk if name == :&
 
           ParsedParamDef.new(
             name: name,  # give param without name default name _
