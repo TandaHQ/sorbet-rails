@@ -42,6 +42,8 @@ class SorbetUtilsExampleClass
   def method_with_missing_args_name(p1, *); end
 
   def method_with_missing_kwargs_name(p1, **); end
+
+  def method_with_missing_block_name(p1, &); end
 end
 
 RSpec.describe SorbetRails::SorbetUtils do
@@ -170,6 +172,15 @@ RSpec.describe SorbetRails::SorbetUtils do
     expect(parameters).to match_array([
       Parameter.new('p1', type: 'T.untyped'),
       Parameter.new('**_', type: 'T.untyped'),
+    ])
+  end
+
+  it 'works when method block doesnt have name' do
+    method_def = SorbetUtilsExampleClass.instance_method(:method_with_missing_block_name)
+    parameters = SorbetRails::SorbetUtils.parameters_from_method_def(method_def)
+    expect(parameters).to match_array([
+      Parameter.new('p1', type: 'T.untyped'),
+      Parameter.new('&blk', type: 'T.untyped'),
     ])
   end
 end
