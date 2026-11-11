@@ -104,14 +104,14 @@ module SorbetRails
           type_str: kwarg_type.to_s,
         )
       end
-      if signature.has_rest
+      unless signature.rest_type.nil?
         params << ParsedParamDef.new(
           name: signature.rest_name,
           kind: :rest,
           type_str: signature.rest_type.to_s,
         )
       end
-      if signature.has_keyrest
+      unless signature.keyrest_type.nil?
         params << ParsedParamDef.new(
           name: signature.keyrest_name,
           kind: :keyrest,
